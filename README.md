@@ -10,6 +10,11 @@ A bootstrap 4 renderer for [Chloroform](https://github.com/lingtalfi/Chloroform)
 This is part of the [universe framework](https://github.com/karayabin/universe-snapshot).
 
 
+
+
+
+
+
 Install
 ==========
 Using the [uni](https://github.com/lingtalfi/universe-naive-importer) command.
@@ -41,8 +46,13 @@ Summary
 What is it?
 ============
 
+[Chloroform Helium demo here](https://lingtalfi.com/universe/Ling/Chloroform_HeliumRenderer/demo).
 
+Image 1
 ![helium renderer](https://lingtalfi.com/img/universe/Chloroform_HeliumRenderer/Chloroform_HeliumRenderer.png)
+
+
+Image 2
 ![helium renderer with errors](https://lingtalfi.com/img/universe/Chloroform_HeliumRenderer/Chloroform_HeliumRenderer_with_errors.png)
 
 
@@ -373,6 +383,10 @@ Related
 History Log
 =============
 
+- 1.0.1 -- 2019-07-26
+
+    - update doc
+    
 - 1.0.0 -- 2019-07-26
 
     - initial commit
