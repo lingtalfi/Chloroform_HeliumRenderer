@@ -383,6 +383,13 @@ Related
 History Log
 =============
 
+- 1.1.0 -- 2019-07-30
+
+    - add prepare, printFormTagOpening, printFormTagClosing and printFormContent methods
+    - move renderPrintsJsHandler option to printJsHandler option
+    - add printSubmitButton and printFormTag options
+    
+    
 - 1.0.1 -- 2019-07-26
 
     - update doc
