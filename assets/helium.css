@@ -2,6 +2,8 @@ form.helium .is-hidden {
   display: none; }
 form.helium .input-time {
   width: 75px; }
+form.helium .control-type-file {
+  height: auto; }
 
 .helium-invalid-feedback {
   display: none;

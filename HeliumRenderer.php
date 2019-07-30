@@ -1048,7 +1048,7 @@ public function printFormTagOpening()
                    id="<?php echo $cssId; ?>"
                    name="<?php echo $field['htmlName']; ?>"
                    value="<?php echo htmlspecialchars($field['value']); ?>"
-                   class="form-control <?php echo $sClass; ?>"
+                   class="form-control control-type-<?php echo $type; ?> <?php echo $sClass; ?>"
                 <?php if (true === $hasHint): ?>
                     aria-describedby="<?php echo $hintId; ?>"
                 <?php endif; ?>

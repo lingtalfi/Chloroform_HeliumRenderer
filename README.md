@@ -383,6 +383,10 @@ Related
 History Log
 =============
 
+- 1.2.0 -- 2019-07-30
+
+    - update css, rendering file looks a bit better now
+
 - 1.1.0 -- 2019-07-30
 
     - add prepare, printFormTagOpening, printFormTagClosing and printFormContent methods
