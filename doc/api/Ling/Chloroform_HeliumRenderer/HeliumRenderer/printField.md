@@ -2,12 +2,12 @@
 [Back to the Ling\Chloroform_HeliumRenderer\HeliumRenderer class](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer.md)
 
 
-HeliumRenderer::printInputField
+HeliumRenderer::printField
 ================
 
 
 
-HeliumRenderer::printInputField — Prints an input field.
+HeliumRenderer::printField — Prints the given field.
 
 
 
@@ -16,12 +16,12 @@ Description
 ================
 
 
-protected [HeliumRenderer::printInputField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printInputField.md)(array $field, string $type) : void
+public [HeliumRenderer::printField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printField.md)(array $field) : void
 
 
 
 
-Prints an input field.
+Prints the given field.
 
 See the [Chloroform toArray](https://github.com/lingtalfi/Chloroform/blob/master/doc/api/Ling/Chloroform/Form/Chloroform/toArray.md) method for more info about the fields structure.
 
@@ -36,16 +36,17 @@ Parameters
 
     
 
-- type
-
-    
-
 
 Return values
 ================
 
 Returns void.
 
+
+Exceptions thrown
+================
+
+- [Exception](http://php.net/manual/en/class.exception.php).&nbsp;
 
 
 
@@ -55,7 +56,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printInputField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1046-L1077)
+See the source code for method [HeliumRenderer::printField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L408-L460)
 
 
 See Also
@@ -63,5 +64,5 @@ See Also
 
 The [HeliumRenderer](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer.md) class.
 
-Previous method: [printJsHandler](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printJsHandler.md)<br>Next method: [printErrorsAndHint](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printErrorsAndHint.md)<br>
+Previous method: [printFields](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printFields.md)<br>Next method: [printStringField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printStringField.md)<br>
 

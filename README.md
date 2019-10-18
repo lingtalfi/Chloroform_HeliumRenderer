@@ -383,6 +383,10 @@ Related
 History Log
 =============
 
+- 1.4.0 -- 2019-10-17
+
+    - add HeliumRenderer->printField method
+    
 - 1.3.0 -- 2019-10-16
 
     - updating css location so that it imports automatically when the planet is imported (https://github.com/lingtalfi/NotationFan/blob/master/universe-assets.md).
