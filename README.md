@@ -377,12 +377,17 @@ Related
 ---------
 - [Chloroform](https://github.com/lingtalfi/Chloroform), the library to create the form structure
 - [Chloroform Hydrogen renderer](https://github.com/lingtalfi/Chloroform_HydrogenRenderer), another renderer for chloroform
+- [Chloroform_HeliumLightRenderer](https://github.com/lingtalfi/Chloroform_HeliumLightRenderer), the light version of the Chloroform Helium renderer
 
 
 
 History Log
 =============
 
+- 1.4.1 -- 2019-10-24
+
+    - add link in README.md
+    
 - 1.4.0 -- 2019-10-17
 
     - add HeliumRenderer->printField method
