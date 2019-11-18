@@ -384,6 +384,10 @@ Related
 History Log
 =============
 
+- 1.6.1 -- 2019-11-18
+
+    - fix HeliumRenderer->printHiddenField, not printing the css id like the input field
+    
 - 1.6.0 -- 2019-11-18
 
     - update HeliumRenderer->printSelectField, now converts all keys in strings

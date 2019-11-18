@@ -541,9 +541,18 @@ public function printFormTagOpening()
      */
     public function printHiddenField(array $field)
     {
+
+        $attr = [];
+        $cssId = $this->getCssIdById($field['id']);
+
+        $attr['id'] = $cssId;
+
         ?>
-        <input type="hidden" name="<?php echo $field['htmlName']; ?>"
-               value="<?php echo htmlspecialchars($field['value']); ?>"/>
+        <input type="hidden"
+               name="<?php echo $field['htmlName']; ?>"
+               value="<?php echo htmlspecialchars($field['value']); ?>"
+            <?php echo StringTool::htmlAttributes($attr); ?>
+        />
         <?php
     }
 
