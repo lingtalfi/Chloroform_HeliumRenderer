@@ -1054,20 +1054,46 @@ public function printFormTagOpening()
             $sClass = "helium-is-invalid";
         }
 
+        $icon = $field['icon'] ?? null;
+        $iconPosition = $field['icon_position'] ?? 'pre';
+
 
         ?>
         <div class="field form-group">
             <?php $this->printFieldLabel($field); ?>
-            <input data-main="<?php echo $field['id']; ?>"
-                   type="<?php echo $type; ?>"
-                   id="<?php echo $cssId; ?>"
-                   name="<?php echo $field['htmlName']; ?>"
-                   value="<?php echo htmlspecialchars($field['value']); ?>"
-                   class="form-control control-type-<?php echo $type; ?> <?php echo $sClass; ?>"
-                <?php if (true === $hasHint): ?>
-                    aria-describedby="<?php echo $hintId; ?>"
+
+
+
+            <?php if (null !== $icon): ?>
+            <div class="input-group mb-3">
+                <?php if ('pre' === $iconPosition): ?>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="<?php echo htmlspecialchars($icon); ?>"></i></span>
+                    </div>
                 <?php endif; ?>
-            />
+
+                <?php endif; ?>
+
+
+                <input data-main="<?php echo $field['id']; ?>"
+                       type="<?php echo $type; ?>"
+                       id="<?php echo $cssId; ?>"
+                       name="<?php echo $field['htmlName']; ?>"
+                       value="<?php echo htmlspecialchars($field['value']); ?>"
+                       class="form-control control-type-<?php echo $type; ?> <?php echo $sClass; ?>"
+                    <?php if (true === $hasHint): ?>
+                        aria-describedby="<?php echo $hintId; ?>"
+                    <?php endif; ?>
+                />
+                <?php if (null !== $icon): ?>
+                <?php if ('post' === $iconPosition): ?>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="<?php echo htmlspecialchars($icon); ?>"></i></span>
+                    </div>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+
 
             <?php $this->printErrorsAndHint($field); ?>
 

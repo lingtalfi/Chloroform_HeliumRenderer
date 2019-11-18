@@ -384,6 +384,10 @@ Related
 History Log
 =============
 
+- 1.5.0 -- 2019-11-18
+
+    - update HeliumRenderer, now input accepts icon option (using bootstrap input groups)
+    
 - 1.4.1 -- 2019-10-24
 
     - add link in README.md
