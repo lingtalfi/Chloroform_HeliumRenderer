@@ -55,7 +55,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printInputField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1046-L1103)
+See the source code for method [HeliumRenderer::printInputField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1048-L1105)
 
 
 See Also

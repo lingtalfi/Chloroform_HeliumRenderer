@@ -59,7 +59,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printJsHandler](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1012-L1032)
+See the source code for method [HeliumRenderer::printJsHandler](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1014-L1034)
 
 
 See Also

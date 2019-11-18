@@ -384,6 +384,10 @@ Related
 History Log
 =============
 
+- 1.6.0 -- 2019-11-18
+
+    - update HeliumRenderer->printSelectField, now converts all keys in strings
+    
 - 1.5.0 -- 2019-11-18
 
     - update HeliumRenderer, now input accepts icon option (using bootstrap input groups)

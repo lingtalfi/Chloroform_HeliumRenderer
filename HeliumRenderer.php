@@ -832,6 +832,7 @@ public function printFormTagOpening()
 
                 <?php if (false === $useOptGroup): ?>
                     <?php foreach ($field['items'] as $value => $label):
+                        $value = (string)$value;
                         $sSel = ($field['value'] === $value) ? ' selected="selected"' : '';
                         ?>
                         <option <?php echo $sSel; ?>
@@ -841,6 +842,7 @@ public function printFormTagOpening()
                     <?php foreach ($field['items'] as $groupLabel => $fieldItems): ?>
                         <optgroup label="<?php echo htmlspecialchars($groupLabel); ?>">
                             <?php foreach ($fieldItems as $value => $label):
+                                $value = (string)$value;
                                 $sSel = ($field['value'] === $value) ? ' selected="selected"' : '';
                                 ?>
                                 <option <?php echo $sSel; ?>
