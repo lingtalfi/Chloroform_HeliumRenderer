@@ -253,10 +253,22 @@ class HeliumRenderer implements ChloroformRendererInterface
      * form tag itself.
      *
      *
-     * @throws ChloroformHeliumRendererException
+     * @throws \Exception
      */
     public function printFormContent()
     {
+
+        $properties = $this->_chloroform['properties'];
+        //--------------------------------------------
+        // IFRAME SIGNAL TECHNIQUE
+        //--------------------------------------------
+        if (array_key_exists("iframe-signal", $properties)) {
+            // as for now we cannot change the css id, this might change if I need it...
+            $value = $properties['iframe-signal'];
+            echo '<div style="display: none;" id="iframe-signal" data-value="' . htmlspecialchars($value) . '"></div>';
+        }
+
+
         $this->printNotifications($this->_chloroform['notifications']);
         $this->printErrorSummary($this->_chloroform['errors']);
         $this->printFields($this->_chloroform['fields']);

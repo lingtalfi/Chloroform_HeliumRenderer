@@ -384,6 +384,10 @@ Related
 History Log
 =============
 
+- 1.7.0 -- 2019-11-25
+
+    - update HeliumRenderer->printFormContent, now can handle basic iframe-signal property
+    
 - 1.6.1 -- 2019-11-18
 
     - fix HeliumRenderer->printHiddenField, not printing the css id like the input field
