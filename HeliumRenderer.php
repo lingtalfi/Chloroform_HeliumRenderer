@@ -832,10 +832,15 @@ public function printFormTagOpening()
         if (true === $multiple) {
             $htmlName .= "[]";
         }
+        $fieldValue = $field['value'];
+        $fieldValueIsArray = is_array($field['value']);
+
 
 
         ?>
         <div class="field form-group">
+
+
             <?php $this->printFieldLabel($field); ?>
             <select
                     data-main="<?php echo $field['id']; ?>"
@@ -854,7 +859,12 @@ public function printFormTagOpening()
                 <?php if (false === $useOptGroup): ?>
                     <?php foreach ($field['items'] as $value => $label):
                         $value = (string)$value;
-                        $sSel = ($field['value'] === $value) ? ' selected="selected"' : '';
+                    if(false===$fieldValueIsArray){
+                        $sSel = ($fieldValue === $value) ? ' selected="selected"' : '';
+                    }
+                    else{
+                        $sSel = in_array($value, $fieldValue, true)?' selected="selected"' : '';
+                    }
                         ?>
                         <option <?php echo $sSel; ?>
                                 value="<?php echo htmlspecialchars($value); ?>"><?php echo $label; ?></option>
@@ -863,8 +873,13 @@ public function printFormTagOpening()
                     <?php foreach ($field['items'] as $groupLabel => $fieldItems): ?>
                         <optgroup label="<?php echo htmlspecialchars($groupLabel); ?>">
                             <?php foreach ($fieldItems as $value => $label):
-                                $value = (string)$value;
-                                $sSel = ($field['value'] === $value) ? ' selected="selected"' : '';
+                                                 $value = (string)$value;
+                    if(false===$fieldValueIsArray){
+                        $sSel = ($fieldValue === $value) ? ' selected="selected"' : '';
+                    }
+                    else{
+                        $sSel = in_array($value, $fieldValue, true)?' selected="selected"' : '';
+                    }
                                 ?>
                                 <option <?php echo $sSel; ?>
                                         value="<?php echo htmlspecialchars($value); ?>"><?php echo $label; ?></option>

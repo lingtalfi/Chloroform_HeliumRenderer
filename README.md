@@ -384,6 +384,10 @@ Related
 History Log
 =============
 
+- 1.8.0 -- 2019-12-04
+
+    - update HeliumRenderer->printSelectField, now handles arrays
+    
 - 1.7.0 -- 2019-11-25
 
     - update HeliumRenderer->printFormContent, now can handle basic iframe-signal property
