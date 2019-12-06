@@ -463,6 +463,9 @@ public function printFormTagOpening()
             case "Ling\Chloroform\Field\PasswordField":
                 $this->printPasswordField($field);
                 break;
+            case "Ling\Chloroform\Field\DecorativeField":
+                $this->printDecorativeField($field);
+                break;
             default:
                 if (true === $this->options['strict']) {
                     throw new ChloroformHeliumRendererException("Don't know how to handle this class name: $className (for fieldId=$id)");
@@ -1032,6 +1035,31 @@ public function printFormTagOpening()
 
 
     /**
+     *
+     * Prints the given decorative field.
+     *
+     * See the @page(Chloroform toArray method) and the @page(DecorativeField class) for more info about the field structure.
+     *
+     * @param array $field
+     */
+    public function printDecorativeField(array $field)
+    {
+        $decorationType = $field['deco_type'];
+        $decorationOptions = $field['deco_options'];
+        switch ($decorationType){
+                    case "hr":
+                        $cssClass =$decorationOptions["cssClass"]?? 'my-5 border border-secondary';
+                        ?>
+                        <hr class="<?php echo htmlspecialchars($cssClass); ?>">
+                        <?php
+                    break;
+                    default:
+                    break;
+                }
+    }
+
+
+    /**
      * Prints the javascript code to handle the validation of the form,
      * and some fields behaviours.
      *
@@ -1095,6 +1123,9 @@ public function printFormTagOpening()
         $icon = $field['icon'] ?? null;
         $iconPosition = $field['icon_position'] ?? 'pre';
 
+        $button = $field['button'] ?? null;
+        $buttonPosition = $field['button_position'] ?? 'pre';
+
 
         ?>
         <div class="field form-group">
@@ -1102,11 +1133,16 @@ public function printFormTagOpening()
 
 
 
-            <?php if (null !== $icon): ?>
+            <?php if (null !== $icon || null !== $button): ?>
             <div class="input-group mb-3">
-                <?php if ('pre' === $iconPosition): ?>
+                <?php if (null !== $icon && 'pre' === $iconPosition): ?>
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="<?php echo htmlspecialchars($icon); ?>"></i></span>
+                    </div>
+                <?php endif; ?>
+                <?php if (null !== $button && 'pre' === $buttonPosition): ?>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><?php echo $button; ?></span>
                     </div>
                 <?php endif; ?>
 
@@ -1123,10 +1159,15 @@ public function printFormTagOpening()
                         aria-describedby="<?php echo $hintId; ?>"
                     <?php endif; ?>
                 />
-                <?php if (null !== $icon): ?>
-                <?php if ('post' === $iconPosition): ?>
+                <?php if (null !== $icon || null !== $button): ?>
+                <?php if (null !== $icon && 'post' === $iconPosition): ?>
                     <div class="input-group-append">
                         <span class="input-group-text"><i class="<?php echo htmlspecialchars($icon); ?>"></i></span>
+                    </div>
+                <?php endif; ?>
+                <?php if (null !== $button && 'post' === $buttonPosition): ?>
+                    <div class="input-group-append">
+                        <?php echo $button; ?>
                     </div>
                 <?php endif; ?>
             </div>

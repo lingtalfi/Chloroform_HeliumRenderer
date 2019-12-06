@@ -110,6 +110,7 @@ The Helium renderer can render the following fields:
 - RadioField
 - FileField
 - PasswordField
+- DecorativeField
 
 
 See the [Chloroform available fields](https://github.com/lingtalfi/Chloroform#the-available-fields) for the complete list of fields.
@@ -383,6 +384,10 @@ Related
 
 History Log
 =============
+
+- 1.9.0 -- 2019-12-06
+
+    - add HeliumRenderer->printDecorativeField
 
 - 1.8.0 -- 2019-12-04
 
