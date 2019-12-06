@@ -197,7 +197,7 @@ class HeliumRenderer implements ChloroformRendererInterface
      */
     public function prepare(array $chloroform)
     {
-        $cssId = StringTool::getUniqueCssId();
+        $cssId = $chloroform['cssId']??StringTool::getUniqueCssId();
         // storing cache vars
         $this->_chloroform = $chloroform;
         $this->_formCssId = $cssId;

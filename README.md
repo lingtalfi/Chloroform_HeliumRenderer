@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.11.0 -- 2019-12-06
+
+    - update HeliumRenderer, now can handle chloroform.cssId property
+    
 - 1.10.0 -- 2019-12-06
 
     - update HeliumRenderer, now can handle chloroform.jsCode property
