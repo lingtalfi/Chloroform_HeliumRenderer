@@ -272,36 +272,37 @@ class HeliumRenderer implements ChloroformRendererInterface
         $this->printNotifications($this->_chloroform['notifications']);
         $this->printErrorSummary($this->_chloroform['errors']);
         $this->printFields($this->_chloroform['fields']);
+        $this->printJsCode($this->_chloroform['jsCode']);
     }
 
     /**
      * Prints the opening form tag.
      */
-public function printFormTagOpening()
-{
-    $isPosted = $this->_chloroform["isPosted"];
-    $sPosted = (true === $isPosted) ? "helium-was-validated" : "";
-    ?>
-    <form id="<?php echo $this->_formCssId; ?>" novalidate class="helium <?php echo $sPosted; ?>"
-          method="<?php echo $this->options['method']; ?>"
-          action="<?php echo htmlspecialchars($this->options['action']); ?>"
-        <?php if (true === $this->options['useEnctypeMultiformData']): ?>
-            enctype="multipart/form-data"
-        <?php endif; ?>
-    >
-        <?php
-        }
-
-
-        /**
-         * Prints the closing form tag.
-         */
-        public function printFormTagClosing()
-        {
+    public function printFormTagOpening()
+    {
+        $isPosted = $this->_chloroform["isPosted"];
+        $sPosted = (true === $isPosted) ? "helium-was-validated" : "";
         ?>
-    </form>
-    <?php
-}
+        <form id="<?php echo $this->_formCssId; ?>" novalidate class="helium <?php echo $sPosted; ?>"
+              method="<?php echo $this->options['method']; ?>"
+              action="<?php echo htmlspecialchars($this->options['action']); ?>"
+            <?php if (true === $this->options['useEnctypeMultiformData']): ?>
+                enctype="multipart/form-data"
+            <?php endif; ?>
+        >
+            <?php
+            }
+
+
+            /**
+             * Prints the closing form tag.
+             */
+            public function printFormTagClosing()
+            {
+            ?>
+        </form>
+        <?php
+    }
 
 
 
@@ -1251,5 +1252,20 @@ public function printFormTagOpening()
     protected function getCssIdById(string $id): string
     {
         return str_replace('.', '-', $id);
+    }
+
+
+
+    /**
+    * Prints the js code of the form, if any.
+    *
+    * @param string|null $jsCode
+    */
+    protected function printJsCode(?string $jsCode){
+        if($jsCode){
+            ?>
+            <script><?php echo $jsCode; ?></script>
+            <?php
+        }
     }
 }

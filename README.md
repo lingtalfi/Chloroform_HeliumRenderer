@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.10.0 -- 2019-12-06
+
+    - update HeliumRenderer, now can handle chloroform.jsCode property
+    
 - 1.9.0 -- 2019-12-06
 
     - add HeliumRenderer->printDecorativeField
