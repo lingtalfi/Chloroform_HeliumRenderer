@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.12.0 -- 2019-12-09
+
+    - update HeliumRenderer->printCheckboxField, now accepts htmlAttr property
+    
 - 1.11.0 -- 2019-12-06
 
     - update HeliumRenderer, now can handle chloroform.cssId property

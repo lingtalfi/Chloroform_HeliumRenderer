@@ -928,6 +928,7 @@ class HeliumRenderer implements ChloroformRendererInterface
         if ($field['errors']) {
             $sClass = "helium-is-invalid";
         }
+        $htmlAttr = $field['htmlAttr']??[];
 
 
         ?>
@@ -948,6 +949,9 @@ class HeliumRenderer implements ChloroformRendererInterface
                                    class="form-check-input"
                                 <?php if (true === $hasHint): ?>
                                     aria-describedby="<?php echo $hintId; ?>"
+                                <?php endif; ?>
+                                <?php if($htmlAttr): ?>
+                                <?php echo StringTool::htmlAttributes($htmlAttr); ?>
                                 <?php endif; ?>
                             >
                             <?php echo $label; ?>
