@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printFormTagClosing](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L300-L305)
+See the source code for method [HeliumRenderer::printFormTagClosing](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L303-L308)
 
 
 See Also

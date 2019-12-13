@@ -4,7 +4,7 @@
 
 The HeliumRenderer class
 ================
-2019-07-26 --> 2019-12-09
+2019-07-26 --> 2019-12-13
 
 
 
@@ -105,6 +105,7 @@ class <span class="pl-k">HeliumRenderer</span> implements [ChloroformRendererInt
     - protected [printFieldLabel](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printFieldLabel.md)(array $field) : void
     - protected [getCssIdById](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/getCssIdById.md)(string $id) : string
     - protected [printJsCode](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printJsCode.md)(string $jsCode) : void
+    - protected [printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printCustomScripts.md)() : void
 
 }
 
@@ -207,6 +208,7 @@ Methods
 - [HeliumRenderer::printFieldLabel](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printFieldLabel.md) &ndash; Prints a standard label for a field.
 - [HeliumRenderer::getCssIdById](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/getCssIdById.md) &ndash; Returns the css id for a given field id.
 - [HeliumRenderer::printJsCode](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printJsCode.md) &ndash; Prints the js code of the form, if any.
+- [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printCustomScripts.md) &ndash; Prints some custom scripts if necessary.
 
 
 

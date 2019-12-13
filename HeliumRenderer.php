@@ -244,8 +244,11 @@ class HeliumRenderer implements ChloroformRendererInterface
         }
 
 
+        $this->printCustomScripts();
+
         return ob_get_clean();
     }
+
 
 
     /**
@@ -1271,5 +1274,14 @@ class HeliumRenderer implements ChloroformRendererInterface
             <script><?php echo $jsCode; ?></script>
             <?php
         }
+    }
+
+
+    /**
+     *
+     * Prints some custom scripts if necessary.
+     * @overrideMe
+     */
+    protected function printCustomScripts(){
     }
 }

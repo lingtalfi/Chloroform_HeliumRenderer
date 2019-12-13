@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.13.0 -- 2019-12-13
+
+    - add HeliumRenderer->printCustomScripts
+    
 - 1.12.0 -- 2019-12-09
 
     - update HeliumRenderer->printCheckboxField, now accepts htmlAttr property
