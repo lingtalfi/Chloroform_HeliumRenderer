@@ -49,7 +49,7 @@ Returns string.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::getCssIdById](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1269-L1272)
+See the source code for method [HeliumRenderer::getCssIdById](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1314-L1317)
 
 
 See Also

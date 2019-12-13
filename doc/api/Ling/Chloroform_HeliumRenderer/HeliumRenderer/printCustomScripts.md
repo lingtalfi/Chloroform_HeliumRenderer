@@ -22,6 +22,7 @@ public [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chlorof
 
 
 Prints some custom scripts if necessary.
+By default, it can handle the [full ajax form technique](https://github.com/lingtalfi/TheBar/blob/master/discussions/full-ajax-form.md).
 
 Note: This method was written with the intent to be overridden by the user (i.e you should override this method in a sub-class).
 
@@ -47,7 +48,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1114-L1115)
+See the source code for method [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1118-L1160)
 
 
 See Also

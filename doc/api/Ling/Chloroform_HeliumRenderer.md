@@ -43,5 +43,6 @@ Dependencies
 ============
 - [Bat](https://github.com/lingtalfi/Bat)
 - [Chloroform](https://github.com/lingtalfi/Chloroform)
+- [HtmlPageTools](https://github.com/lingtalfi/HtmlPageTools)
 
 
