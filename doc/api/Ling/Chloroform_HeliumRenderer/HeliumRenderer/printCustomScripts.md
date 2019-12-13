@@ -16,7 +16,7 @@ Description
 ================
 
 
-protected [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printCustomScripts.md)() : void
+public [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printCustomScripts.md)() : void
 
 
 
@@ -47,7 +47,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1285-L1286)
+See the source code for method [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1114-L1115)
 
 
 See Also
@@ -55,5 +55,5 @@ See Also
 
 The [HeliumRenderer](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer.md) class.
 
-Previous method: [printJsCode](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printJsCode.md)<br>
+Previous method: [printJsHandler](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printJsHandler.md)<br>Next method: [printInputField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printInputField.md)<br>
 

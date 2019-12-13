@@ -1105,6 +1105,16 @@ class HeliumRenderer implements ChloroformRendererInterface
         <?php
     }
 
+
+    /**
+     *
+     * Prints some custom scripts if necessary.
+     * @overrideMe
+     */
+    public function printCustomScripts(){
+    }
+
+
     //--------------------------------------------
     //
     //--------------------------------------------
@@ -1277,11 +1287,4 @@ class HeliumRenderer implements ChloroformRendererInterface
     }
 
 
-    /**
-     *
-     * Prints some custom scripts if necessary.
-     * @overrideMe
-     */
-    protected function printCustomScripts(){
-    }
 }

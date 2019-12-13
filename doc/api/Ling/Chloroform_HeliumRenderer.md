@@ -36,6 +36,7 @@ Table of contents
     - [HeliumRenderer::printPasswordField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printPasswordField.md) &ndash; Prints the given password field.
     - [HeliumRenderer::printDecorativeField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printDecorativeField.md) &ndash; Prints the given decorative field.
     - [HeliumRenderer::printJsHandler](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printJsHandler.md) &ndash; and some fields behaviours.
+    - [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/doc/api/Ling/Chloroform_HeliumRenderer/HeliumRenderer/printCustomScripts.md) &ndash; Prints some custom scripts if necessary.
 
 
 Dependencies

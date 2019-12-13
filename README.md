@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.13.1 -- 2019-12-13
+
+    - update HeliumRenderer->printCustomScripts, is now public
+    
 - 1.13.0 -- 2019-12-13
 
     - add HeliumRenderer->printCustomScripts
