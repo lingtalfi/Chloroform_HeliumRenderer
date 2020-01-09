@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.14.0 -- 2020-01-09
+
+    - update HeliumRenderer->printCustomScripts, is now empty
+    
 - 1.13.2 -- 2019-12-13
 
     - update HeliumRenderer->__construct, now accepts the cssId option

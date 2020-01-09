@@ -4,7 +4,7 @@
 
 The ChloroformHeliumRendererException class
 ================
-2019-07-26 --> 2019-12-13
+2019-07-26 --> 2020-01-09
 
 
 

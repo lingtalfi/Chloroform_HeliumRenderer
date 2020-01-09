@@ -1111,52 +1111,10 @@ class HeliumRenderer implements ChloroformRendererInterface
     /**
      *
      * Prints some custom scripts if necessary.
-     * By default, it can handle the @page(full ajax form technique).
-     *
      * @overrideMe
      */
     public function printCustomScripts(){
 
-        return false; // work in progress...
-        $useFullAjaxForm = $this->options['fullAjaxForm'] ?? false;
-        if (false === $useFullAjaxForm) {
-            return;
-        }
-
-
-        /**
-         * @var $copilot HtmlPageCopilot
-         */
-        $copilot = $this->container->get('html_page_copilot');
-        $copilot->registerLibrary("fullAjaxFormHandler", [
-            "/libs/universe/Ling/JFullAjaxForm/full-ajax-form-handler.js",
-        ]);
-
-
-        /**
-         * fullAjaxForm technique implementation here.
-         * https://github.com/lingtalfi/TheBar/blob/master/discussions/full-ajax-form.md
-         *
-         * For now, I totally bypass the parent's javascript dynamic error handling system, I should reintroduce it later maybe,
-         * I'm just experimenting right now, and want to get acquainted with the fullAjaxForm implementation first.
-         *
-         *
-         *
-         */
-        ?>
-        <script>
-            document.addEventListener("DOMContentLoaded", function (event) {
-                $(document).ready(function () {
-                    var fafh = new FullAjaxFormHandler({
-                        jForm: $('#<?php echo $this->_formCssId; ?>'),
-                    });
-
-                    fafh.listen();
-
-                });
-            });
-        </script>
-        <?php
     }
 
 
