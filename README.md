@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.14.2 -- 2020-02-27
+
+    - fix HeliumRenderer->printJsHandler assuming that jquery is loaded right away
+    
 - 1.14.1 -- 2020-02-27
 
     - fix HeliumRenderer->printDateTimeField not having a default value for useSecond property

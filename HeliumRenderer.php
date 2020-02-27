@@ -240,6 +240,7 @@ class HeliumRenderer implements ChloroformRendererInterface
             $this->printFormTagClosing();
         }
 
+
         if (true === $this->options['printJsHandler']) {
             $this->printJsHandler();
         }
@@ -1098,10 +1099,12 @@ class HeliumRenderer implements ChloroformRendererInterface
         }
         ?>
         <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
             $(document).ready(function () {
                 var formHandler = new HeliumFormHandler($('#<?php echo $cssId ?>'), <?php echo json_encode($fields); ?>, <?php echo json_encode($options); ?>);
                 formHandler.init();
             });
+        });
         </script>
         <?php
     }
