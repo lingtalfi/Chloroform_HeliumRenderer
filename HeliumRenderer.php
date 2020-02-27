@@ -8,7 +8,6 @@ use Ling\Bat\CaseTool;
 use Ling\Bat\StringTool;
 use Ling\Chloroform\Renderer\ChloroformRendererInterface;
 use Ling\Chloroform_HeliumRenderer\Exception\ChloroformHeliumRendererException;
-use Ling\HtmlPageTools\Copilot\HtmlPageCopilot;
 
 
 /**
@@ -732,7 +731,7 @@ class HeliumRenderer implements ChloroformRendererInterface
 
 
         $value = (string)$field['value'];
-        $useSecond = $field['useSecond'];
+        $useSecond = $field['useSecond']?? true;
         $tempName = "_" . $field['htmlName'];
 
 

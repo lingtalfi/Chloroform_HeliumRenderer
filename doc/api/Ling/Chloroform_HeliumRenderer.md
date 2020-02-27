@@ -1,6 +1,6 @@
 Ling/Chloroform_HeliumRenderer
 ================
-2019-07-26 --> 2020-01-09
+2019-07-26 --> 2020-02-27
 
 
 
@@ -43,6 +43,5 @@ Dependencies
 ============
 - [Bat](https://github.com/lingtalfi/Bat)
 - [Chloroform](https://github.com/lingtalfi/Chloroform)
-- [HtmlPageTools](https://github.com/lingtalfi/HtmlPageTools)
 
 

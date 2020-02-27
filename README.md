@@ -1,6 +1,6 @@
 Chloroform_HeliumRenderer
 ===========
-2019-07-26
+2019-07-26 -> 2020-02-27
 
 
 
@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.14.1 -- 2020-02-27
+
+    - fix HeliumRenderer->printDateTimeField not having a default value for useSecond property
+    
 - 1.14.0 -- 2020-01-09
 
     - update HeliumRenderer->printCustomScripts, is now empty

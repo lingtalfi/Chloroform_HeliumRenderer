@@ -2,7 +2,6 @@ dependencies:
     Ling: 
         - Bat
         - Chloroform
-        - HtmlPageTools
     
 
 post_install: 
