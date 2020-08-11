@@ -45,6 +45,8 @@ Summary
 
 What is it?
 ============
+2019-07-26
+
 
 [Chloroform Helium demo here](https://lingtalfi.com/universe/Ling/Chloroform_HeliumRenderer/demo).
 
@@ -72,6 +74,7 @@ This means you don't have to type a single line of javascript, the HeliumRendere
 
 Quick note about validation
 ---------
+2019-07-26
 
 Note: I found the bootstrap form validation class confusing to use, so I recreated them, inspired by them.
 
@@ -93,6 +96,9 @@ this class takes effect only if the form has class **helium-was-validated**).
 
 Implemented fields
 -------------
+2019-07-26
+
+
 
 The Helium renderer can render the following fields:
 
@@ -118,10 +124,17 @@ See the [Chloroform available fields](https://github.com/lingtalfi/Chloroform#th
 
 Implemented js validators
 -----------
+2019-07-26 -> 2020-08-11
+
+
 
 The Helium renderer's js layer will handle the following validators:
 
 
+- IsIntegerValidator
+- IsNumberValidator
+- IsMysqlDateValidator
+- IsMysqlDatetimeValidator
 - MinMaxCharValidator
 - MinMaxNumberValidator
 - MinMaxDateValidator
@@ -140,6 +153,7 @@ See the complete [list of Chloroform validators here](https://github.com/lingtal
 
 How to use
 ==============
+2019-07-26
 
 
 You first need to import the assets.
@@ -385,6 +399,10 @@ Related
 History Log
 =============
 
+- 1.18.0 -- 2020-08-11
+
+    - update helium.js, now supports IsMysqlDateValidator and IsMysqlDatetimeValidator
+    
 - 1.17.0 -- 2020-08-11
 
     - update helium.js, now supports isIntegerValidator.mode option

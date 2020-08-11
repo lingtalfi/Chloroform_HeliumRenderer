@@ -270,6 +270,46 @@ if (false === ("HeliumFormHandler" in window)) {
 
                                     }
                                     break;
+                                case 'Ling\\Chloroform\\Validator\\IsMysqlDateValidator':
+                                    var acceptEmpty = validator.acceptEmpty;
+                                    if (
+                                        false === acceptEmpty && (
+                                            null === value ||
+                                            ('string' === typeof value && '' === value.trim())
+
+                                        )
+                                    ) {
+                                        errorMessage = this.getErrorMessage("acceptEmpty", validator, {
+                                            "fieldName": errorName,
+                                        });
+                                    } else {
+                                        if ('string' !== typeof value || null === value.match(/\d{4}-\d{2}-\d{2}/)) {
+                                            errorMessage = this.getErrorMessage("main", validator, {
+                                                "fieldName": errorName,
+                                            });
+                                        }
+                                    }
+                                    break;
+                                case 'Ling\\Chloroform\\Validator\\IsMysqlDatetimeValidator':
+                                    var acceptEmpty = validator.acceptEmpty;
+                                    if (
+                                        false === acceptEmpty && (
+                                            null === value ||
+                                            ('string' === typeof value && '' === value.trim())
+
+                                        )
+                                    ) {
+                                        errorMessage = this.getErrorMessage("acceptEmpty", validator, {
+                                            "fieldName": errorName,
+                                        });
+                                    } else {
+                                        if ('string' !== typeof value || null === value.match(/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/)) {
+                                            errorMessage = this.getErrorMessage("main", validator, {
+                                                "fieldName": errorName,
+                                            });
+                                        }
+                                    }
+                                    break;
                                 case 'Ling\\Chloroform\\Validator\\IsNumberValidator':
                                     if (
                                         false === isNumber(value)
