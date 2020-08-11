@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.17.0 -- 2020-08-11
+
+    - update helium.js, now supports isIntegerValidator.mode option
+    
 - 1.16.0 -- 2020-08-11
 
     - update helium.js, add support for isIntegerValidator and isNumberValidator

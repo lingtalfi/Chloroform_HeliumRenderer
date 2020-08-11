@@ -21,12 +21,9 @@ if (false === ("HeliumFormHandler" in window)) {
         }
 
 
-
         function isIntegerLike(value) {
             return /^-{0,1}\d+$/.test(value);
         }
-
-
 
 
         // https://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t
@@ -188,7 +185,6 @@ if (false === ("HeliumFormHandler" in window)) {
          */
         HeliumFormHandler.prototype.validate = function () {
 
-
             var hasError = false;
 
             /**
@@ -227,12 +223,51 @@ if (false === ("HeliumFormHandler" in window)) {
 
                             switch (name) {
                                 case 'Ling\\Chloroform\\Validator\\IsIntegerValidator':
+
+                                    var mode = validator.mode;
                                     if (
                                         false === isIntegerLike(value)
                                     ) {
                                         errorMessage = this.getErrorMessage("main", validator, {
                                             "fieldName": errorName,
                                         });
+                                    } else {
+                                        var intHasError = false;
+                                        var intValue = parseInt(value);
+                                        switch (mode) {
+                                            case 'default':
+                                                break;
+                                            case 'onlyPositive':
+                                                if (intValue <= 0) {
+                                                    intHasError = true;
+                                                }
+                                                break;
+                                            case 'onlyNegative':
+                                                if (intValue >= 0) {
+                                                    intHasError = true;
+                                                }
+                                                break;
+                                            case 'positiveAndZero':
+                                                if (intValue < 0) {
+                                                    intHasError = true;
+                                                }
+                                                break;
+                                            case 'negativeAndZero':
+                                                if (intValue > 0) {
+                                                    intHasError = true;
+                                                }
+                                                break;
+                                            default:
+                                                throw new Error("Unknown mode: " + mode);
+                                                break;
+                                        }
+
+                                        if (true === intHasError) {
+                                            errorMessage = this.getErrorMessage(mode, validator, {
+                                                "fieldName": errorName,
+                                            });
+                                        }
+
                                     }
                                     break;
                                 case 'Ling\\Chloroform\\Validator\\IsNumberValidator':
