@@ -1,6 +1,6 @@
 Chloroform_HeliumRenderer
 ===========
-2019-07-26 -> 2020-03-11
+2019-07-26 -> 2020-08-11
 
 
 
@@ -385,6 +385,10 @@ Related
 History Log
 =============
 
+- 1.16.0 -- 2020-08-11
+
+    - update helium.js, add support for isIntegerValidator and isNumberValidator
+    
 - 1.15.0 -- 2020-03-11
 
     - update helium.js to ensure that the form submit event handler is bound first
