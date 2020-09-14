@@ -1,6 +1,6 @@
 Chloroform_HeliumRenderer
 ===========
-2019-07-26 -> 2020-08-11
+2019-07-26 -> 2020-09-14
 
 
 
@@ -143,6 +143,7 @@ The Helium renderer's js layer will handle the following validators:
 - FileMimeTypeValidator
 - RequiredValidator
 - RequiredDateValidator
+- RequiredDatetimeValidator
 - PasswordConfirmValidator
 
 See the complete [list of Chloroform validators here](https://github.com/lingtalfi/Chloroform#the-available-validators).
@@ -398,6 +399,14 @@ Related
 
 History Log
 =============
+
+- 1.19.1 -- 2020-09-14
+
+    - add support for chloroform's RequiredDatetimeValidator
+    
+- 1.19.0 -- 2020-08-13
+
+    - update HeliumRenderer->printNotifications, now also accepts an array of FormNotificationInterface 
 
 - 1.18.0 -- 2020-08-11
 

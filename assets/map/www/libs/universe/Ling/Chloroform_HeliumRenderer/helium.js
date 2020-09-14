@@ -158,9 +158,13 @@ if (false === ("HeliumFormHandler" in window)) {
 
                 if (jDate.length) {
                     var date = jDate.val();
-                    if ("" === date) {
-                        date = "0000-00-00";
-                    }
+
+                    /**
+                     * Don't uncomment that below
+                     */
+                    // if ("" === date) {
+                    //     date = "0000-00-00";
+                    // }
                     newValue = date + " " + newValue;
                 }
 
@@ -382,10 +386,24 @@ if (false === ("HeliumFormHandler" in window)) {
                                     }
                                     break;
                                 case 'Ling\\Chloroform\\Validator\\RequiredDateValidator':
+
                                     if (
                                         ('string' === typeof value && '' === value) ||
                                         ('object' === typeof value && $.isEmptyObject(value)) ||
                                         ('string' === typeof value && -1 !== value.indexOf("0000-00-00"))
+                                    ) {
+                                        errorMessage = this.getErrorMessage("main", validator, {
+                                            "fieldName": errorName,
+                                        });
+                                    }
+                                    break;
+                                case 'Ling\\Chloroform\\Validator\\RequiredDatetimeValidator':
+
+                                    if (
+                                        ('string' === typeof value && '' === value) ||
+                                        ('object' === typeof value && $.isEmptyObject(value)) ||
+                                        ('string' === typeof value && 19 !== value.length) ||
+                                        ('string' === typeof value && -1 !== value.indexOf("0000-00-00 00:00:00"))
                                     ) {
                                         errorMessage = this.getErrorMessage("main", validator, {
                                             "fieldName": errorName,
@@ -414,7 +432,7 @@ if (false === ("HeliumFormHandler" in window)) {
 
 
                         if (fieldErrors.length) {
-                            this.addFieldErrors(id, jField, fieldErrors);
+                            this.addFieldErrors(id, jField, fieldErrors, name);
                         }
 
 
@@ -501,7 +519,7 @@ if (false === ("HeliumFormHandler" in window)) {
          * Adds the given error messages to the given field and the error summary,
          * depending on the configuration (see the constructor of this object for more information).
          */
-        HeliumFormHandler.prototype.addFieldErrors = function (id, jField, errors) {
+        HeliumFormHandler.prototype.addFieldErrors = function (id, jField, errors, validatorName) {
 
 
             // filtering errors
@@ -560,8 +578,24 @@ if (false === ("HeliumFormHandler" in window)) {
                         this.error("I don't know how to add inline error message in this field element yet (element " + id + ").");
                     }
 
+
                     // also adding the helium-is-invalid class to form controls
-                    jParentField.find('.form-control').addClass("helium-is-invalid");
+                    jParentField.find('.form-control').each(function () {
+
+                        if (
+                            'Ling\\Chloroform\\Validator\\RequiredDatetimeValidator' === validatorName &&
+                            (
+                                $(this).hasClass("input-time-hours") ||
+                                $(this).hasClass("input-time-minutes") ||
+                                $(this).hasClass("input-time-seconds")
+                            )
+                        ) {
+                            return;
+                        }
+                        $(this).addClass("helium-is-invalid");
+                    });
+
+
                     jParentField.find('.form-check-label').addClass("helium-is-invalid");
 
 

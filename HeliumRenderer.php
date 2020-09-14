@@ -6,6 +6,7 @@ namespace Ling\Chloroform_HeliumRenderer;
 
 use Ling\Bat\CaseTool;
 use Ling\Bat\StringTool;
+use Ling\Chloroform\FormNotification\FormNotificationInterface;
 use Ling\Chloroform\Renderer\ChloroformRendererInterface;
 use Ling\Chloroform_HeliumRenderer\Exception\ChloroformHeliumRendererException;
 
@@ -252,7 +253,6 @@ class HeliumRenderer implements ChloroformRendererInterface
     }
 
 
-
     /**
      * Prints the form content (notifications, error summary, and fields), but not the
      * form tag itself.
@@ -283,31 +283,31 @@ class HeliumRenderer implements ChloroformRendererInterface
     /**
      * Prints the opening form tag.
      */
-    public function printFormTagOpening()
-    {
-        $isPosted = $this->_chloroform["isPosted"];
-        $sPosted = (true === $isPosted) ? "helium-was-validated" : "";
-        ?>
-        <form id="<?php echo $this->_formCssId; ?>" novalidate class="helium <?php echo $sPosted; ?>"
-              method="<?php echo $this->options['method']; ?>"
-              action="<?php echo htmlspecialchars($this->options['action']); ?>"
-            <?php if (true === $this->options['useEnctypeMultiformData']): ?>
-                enctype="multipart/form-data"
-            <?php endif; ?>
-        >
-            <?php
-            }
-
-
-            /**
-             * Prints the closing form tag.
-             */
-            public function printFormTagClosing()
-            {
-            ?>
-        </form>
+public function printFormTagOpening()
+{
+    $isPosted = $this->_chloroform["isPosted"];
+    $sPosted = (true === $isPosted) ? "helium-was-validated" : "";
+    ?>
+    <form id="<?php echo $this->_formCssId; ?>" novalidate class="helium <?php echo $sPosted; ?>"
+          method="<?php echo $this->options['method']; ?>"
+          action="<?php echo htmlspecialchars($this->options['action']); ?>"
+        <?php if (true === $this->options['useEnctypeMultiformData']): ?>
+            enctype="multipart/form-data"
+        <?php endif; ?>
+    >
         <?php
-    }
+        }
+
+
+        /**
+         * Prints the closing form tag.
+         */
+        public function printFormTagClosing()
+        {
+        ?>
+    </form>
+    <?php
+}
 
 
 
@@ -325,6 +325,14 @@ class HeliumRenderer implements ChloroformRendererInterface
     public function printNotifications(array $notifications)
     {
         foreach ($notifications as $notification) {
+
+
+            if ($notification instanceof FormNotificationInterface) {
+                $notification = [
+                    "type" => $notification->getType(),
+                    "message" => $notification->getMessage(),
+                ];
+            }
 
             $type = $notification['type'];
             switch ($type) {
@@ -730,9 +738,8 @@ class HeliumRenderer implements ChloroformRendererInterface
             $sClass = "helium-is-invalid";
         }
 
-
         $value = (string)$field['value'];
-        $useSecond = $field['useSecond']?? true;
+        $useSecond = $field['useSecond'] ?? true;
         $tempName = "_" . $field['htmlName'];
 
 
@@ -845,7 +852,6 @@ class HeliumRenderer implements ChloroformRendererInterface
         $fieldValueIsArray = is_array($field['value']);
 
 
-
         ?>
         <div class="field form-group">
 
@@ -868,12 +874,11 @@ class HeliumRenderer implements ChloroformRendererInterface
                 <?php if (false === $useOptGroup): ?>
                     <?php foreach ($field['items'] as $value => $label):
                         $value = (string)$value;
-                    if(false===$fieldValueIsArray){
-                        $sSel = ($fieldValue === $value) ? ' selected="selected"' : '';
-                    }
-                    else{
-                        $sSel = in_array($value, $fieldValue, true)?' selected="selected"' : '';
-                    }
+                        if (false === $fieldValueIsArray) {
+                            $sSel = ($fieldValue === $value) ? ' selected="selected"' : '';
+                        } else {
+                            $sSel = in_array($value, $fieldValue, true) ? ' selected="selected"' : '';
+                        }
                         ?>
                         <option <?php echo $sSel; ?>
                                 value="<?php echo htmlspecialchars($value); ?>"><?php echo $label; ?></option>
@@ -882,13 +887,12 @@ class HeliumRenderer implements ChloroformRendererInterface
                     <?php foreach ($field['items'] as $groupLabel => $fieldItems): ?>
                         <optgroup label="<?php echo htmlspecialchars($groupLabel); ?>">
                             <?php foreach ($fieldItems as $value => $label):
-                                                 $value = (string)$value;
-                    if(false===$fieldValueIsArray){
-                        $sSel = ($fieldValue === $value) ? ' selected="selected"' : '';
-                    }
-                    else{
-                        $sSel = in_array($value, $fieldValue, true)?' selected="selected"' : '';
-                    }
+                                $value = (string)$value;
+                                if (false === $fieldValueIsArray) {
+                                    $sSel = ($fieldValue === $value) ? ' selected="selected"' : '';
+                                } else {
+                                    $sSel = in_array($value, $fieldValue, true) ? ' selected="selected"' : '';
+                                }
                                 ?>
                                 <option <?php echo $sSel; ?>
                                         value="<?php echo htmlspecialchars($value); ?>"><?php echo $label; ?></option>
@@ -933,7 +937,7 @@ class HeliumRenderer implements ChloroformRendererInterface
         if ($field['errors']) {
             $sClass = "helium-is-invalid";
         }
-        $htmlAttr = $field['htmlAttr']??[];
+        $htmlAttr = $field['htmlAttr'] ?? [];
 
 
         ?>
@@ -955,8 +959,8 @@ class HeliumRenderer implements ChloroformRendererInterface
                                 <?php if (true === $hasHint): ?>
                                     aria-describedby="<?php echo $hintId; ?>"
                                 <?php endif; ?>
-                                <?php if($htmlAttr): ?>
-                                <?php echo StringTool::htmlAttributes($htmlAttr); ?>
+                                <?php if ($htmlAttr): ?>
+                                    <?php echo StringTool::htmlAttributes($htmlAttr); ?>
                                 <?php endif; ?>
                             >
                             <?php echo $label; ?>
@@ -1056,16 +1060,16 @@ class HeliumRenderer implements ChloroformRendererInterface
     {
         $decorationType = $field['deco_type'];
         $decorationOptions = $field['deco_options'];
-        switch ($decorationType){
-                    case "hr":
-                        $cssClass =$decorationOptions["cssClass"]?? 'my-5 border border-secondary';
-                        ?>
-                        <hr class="<?php echo htmlspecialchars($cssClass); ?>">
-                        <?php
-                    break;
-                    default:
-                    break;
-                }
+        switch ($decorationType) {
+            case "hr":
+                $cssClass = $decorationOptions["cssClass"] ?? 'my-5 border border-secondary';
+                ?>
+                <hr class="<?php echo htmlspecialchars($cssClass); ?>">
+                <?php
+                break;
+            default:
+                break;
+        }
     }
 
 
@@ -1099,12 +1103,12 @@ class HeliumRenderer implements ChloroformRendererInterface
         }
         ?>
         <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            $(document).ready(function () {
-                var formHandler = new HeliumFormHandler($('#<?php echo $cssId ?>'), <?php echo json_encode($fields); ?>, <?php echo json_encode($options); ?>);
-                formHandler.init();
+            document.addEventListener("DOMContentLoaded", function (event) {
+                $(document).ready(function () {
+                    var formHandler = new HeliumFormHandler($('#<?php echo $cssId ?>'), <?php echo json_encode($fields); ?>, <?php echo json_encode($options); ?>);
+                    formHandler.init();
+                });
             });
-        });
         </script>
         <?php
     }
@@ -1115,7 +1119,8 @@ class HeliumRenderer implements ChloroformRendererInterface
      * Prints some custom scripts if necessary.
      * @overrideMe
      */
-    public function printCustomScripts(){
+    public function printCustomScripts()
+    {
 
     }
 
@@ -1277,14 +1282,14 @@ class HeliumRenderer implements ChloroformRendererInterface
     }
 
 
-
     /**
-    * Prints the js code of the form, if any.
-    *
-    * @param string|null $jsCode
-    */
-    protected function printJsCode(?string $jsCode){
-        if($jsCode){
+     * Prints the js code of the form, if any.
+     *
+     * @param string|null $jsCode
+     */
+    protected function printJsCode(?string $jsCode)
+    {
+        if ($jsCode) {
             ?>
             <script><?php echo $jsCode; ?></script>
             <?php
