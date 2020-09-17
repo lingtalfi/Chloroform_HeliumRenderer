@@ -51,7 +51,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printPasswordField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1045-L1048)
+See the source code for method [HeliumRenderer::printPasswordField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1049-L1052)
 
 
 See Also

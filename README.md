@@ -1,6 +1,6 @@
 Chloroform_HeliumRenderer
 ===========
-2019-07-26 -> 2020-09-14
+2019-07-26 -> 2020-09-17
 
 
 
@@ -400,6 +400,10 @@ Related
 History Log
 =============
 
+- 1.19.2 -- 2020-09-17
+
+    - update HeliumRenderer->printSelectField, now accepts the size parameter
+    
 - 1.19.1 -- 2020-09-14
 
     - add support for chloroform's RequiredDatetimeValidator

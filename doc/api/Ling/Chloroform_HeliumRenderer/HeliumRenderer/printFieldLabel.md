@@ -51,7 +51,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printFieldLabel](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1259-L1270)
+See the source code for method [HeliumRenderer::printFieldLabel](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1263-L1274)
 
 
 See Also

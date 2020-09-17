@@ -51,7 +51,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printCheckboxField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L921-L975)
+See the source code for method [HeliumRenderer::printCheckboxField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L925-L979)
 
 
 See Also

@@ -836,6 +836,7 @@ public function printFormTagOpening()
 
 
         $multiple = $field['multiple'] ?? false;
+        $size = $field['size'] ?? null;
         $items = $field['items'];
         $useOptGroup = false;
         if (count($items) > 0) {
@@ -867,6 +868,9 @@ public function printFormTagOpening()
                     class="form-control <?php echo $sClass; ?>"
                 <?php if (true === $hasHint): ?>
                     aria-describedby="<?php echo $hintId; ?>"
+                <?php endif; ?>
+                <?php if (null !== $size): ?>
+                    size="<?php echo htmlspecialchars($size); ?>"
                 <?php endif; ?>
             >
 
