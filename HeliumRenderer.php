@@ -141,7 +141,6 @@ class HeliumRenderer implements ChloroformRendererInterface
      */
     public function __construct(array $options = [])
     {
-
         $this->options = array_replace_recursive([
             "method" => "POST",
             "action" => "",
@@ -203,6 +202,9 @@ class HeliumRenderer implements ChloroformRendererInterface
 
         // storing cache vars
         $this->_chloroform = $chloroform;
+        if (array_key_exists("cssId", $chloroform)) {
+            $this->_formCssId = $chloroform['cssId'];
+        }
     }
 
     /**

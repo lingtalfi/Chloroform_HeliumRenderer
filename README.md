@@ -1,6 +1,6 @@
 Chloroform_HeliumRenderer
 ===========
-2019-07-26 -> 2020-09-17
+2019-07-26 -> 2020-09-22
 
 
 
@@ -400,6 +400,10 @@ Related
 History Log
 =============
 
+- 1.19.3 -- 2020-09-22
+
+    - fix HeliumRenderer._formCssId not being synced with the chloroform cssId
+    
 - 1.19.2 -- 2020-09-17
 
     - update HeliumRenderer->printSelectField, now accepts the size parameter

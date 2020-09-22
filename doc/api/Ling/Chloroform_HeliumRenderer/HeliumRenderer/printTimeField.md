@@ -55,7 +55,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printTimeField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L646-L720)
+See the source code for method [HeliumRenderer::printTimeField](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L648-L722)
 
 
 See Also
