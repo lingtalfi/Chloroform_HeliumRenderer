@@ -47,7 +47,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1128-L1131)
+See the source code for method [HeliumRenderer::printCustomScripts](https://github.com/lingtalfi/Chloroform_HeliumRenderer/blob/master/HeliumRenderer.php#L1136-L1139)
 
 
 See Also

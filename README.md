@@ -45,7 +45,7 @@ Summary
 
 What is it?
 ============
-2019-07-26
+2019-07-26 -> 2020-09-22
 
 
 [Chloroform Helium demo here](https://lingtalfi.com/universe/Ling/Chloroform_HeliumRenderer/demo).
@@ -61,6 +61,9 @@ Image 2
 This is my second [Chloroform](https://github.com/lingtalfi/Chloroform) renderer attempt.
 
 It basically renders a Chloroform form, using bootstrap 4 framework.
+
+
+It's compliant with the [clever form initiative](https://github.com/lingtalfi/TheBar/blob/master/discussions/clever-form-initiative.md).
 
 
 
@@ -400,6 +403,10 @@ Related
 History Log
 =============
 
+- 1.19.4 -- 2020-09-22
+
+    - now Chloroform_HeliumRenderer is compliant with the clever form initiative
+    
 - 1.19.3 -- 2020-09-22
 
     - fix HeliumRenderer._formCssId not being synced with the chloroform cssId

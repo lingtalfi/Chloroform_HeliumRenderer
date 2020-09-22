@@ -290,7 +290,8 @@ public function printFormTagOpening()
     $isPosted = $this->_chloroform["isPosted"];
     $sPosted = (true === $isPosted) ? "helium-was-validated" : "";
     ?>
-    <form id="<?php echo $this->_formCssId; ?>" novalidate class="helium <?php echo $sPosted; ?>"
+    <form id="<?php echo $this->_formCssId; ?>" novalidate class="helium <?php echo $sPosted; ?> cfi-form"
+          data-cfi-id="<?php echo htmlspecialchars($this->_chloroform['id']); ?>"
           method="<?php echo $this->options['method']; ?>"
           action="<?php echo htmlspecialchars($this->options['action']); ?>"
         <?php if (true === $this->options['useEnctypeMultiformData']): ?>
@@ -525,7 +526,7 @@ public function printFormTagOpening()
 
 
         ?>
-        <div class="field form-group">
+        <div class="field form-group cfi-control" data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
             <?php $this->printFieldLabel($field); ?>
             <textarea
                     data-main="<?php echo $field['id']; ?>"
@@ -578,10 +579,14 @@ public function printFormTagOpening()
 
         $attr['id'] = $cssId;
 
+
         ?>
-        <input type="hidden"
-               name="<?php echo $field['htmlName']; ?>"
-               value="<?php echo htmlspecialchars($field['value']); ?>"
+        <input
+                class="cfi-control"
+                data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>"
+                type="hidden"
+                name="<?php echo $field['htmlName']; ?>"
+                value="<?php echo htmlspecialchars($field['value']); ?>"
             <?php echo StringTool::htmlAttributes($attr); ?>
         />
         <?php
@@ -599,7 +604,8 @@ public function printFormTagOpening()
     public function printCSRFField(array $field)
     {
         ?>
-        <input type="hidden" name="<?php echo $field['htmlName']; ?>"
+        <input class="cfi-control" data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>" type="hidden"
+               name="<?php echo $field['htmlName']; ?>"
                value="<?php echo htmlspecialchars($field['value']); ?>"/>
         <?php
     }
@@ -679,7 +685,8 @@ public function printFormTagOpening()
 
 
         ?>
-        <div class="field form-group" id="<?php echo $cssId; ?>">
+        <div class="field form-group cfi-control" id="<?php echo $cssId; ?>"
+             data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
             <?php $this->printFieldLabel($field); ?>
             <div class="form-inline d-sm-flex">
                 <div>
@@ -765,7 +772,7 @@ public function printFormTagOpening()
         $second = (int)$second;
 
         ?>
-        <div class="field form-group">
+        <div class="field form-group cfi-control" data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
             <?php $this->printFieldLabel($field); ?>
 
             <div class="mb-3">
@@ -856,7 +863,7 @@ public function printFormTagOpening()
 
 
         ?>
-        <div class="field form-group">
+        <div class="field form-group cfi-control" data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
 
 
             <?php $this->printFieldLabel($field); ?>
@@ -947,7 +954,7 @@ public function printFormTagOpening()
 
 
         ?>
-        <div class="field form-group">
+        <div class="field form-group cfi-control" data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
             <?php $this->printFieldLabel($field); ?>
 
             <!--            <div class="field-inline-errors"></div>-->
@@ -999,7 +1006,7 @@ public function printFormTagOpening()
             $sClass = "helium-is-invalid";
         }
         ?>
-        <div class="field form-group">
+        <div class="field form-group cfi-control" data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
             <?php $this->printFieldLabel($field); ?>
             <!--            <div class="field-inline-errors"></div>-->
             <div class="field-options">
@@ -1070,7 +1077,8 @@ public function printFormTagOpening()
             case "hr":
                 $cssClass = $decorationOptions["cssClass"] ?? 'my-5 border border-secondary';
                 ?>
-                <hr class="<?php echo htmlspecialchars($cssClass); ?>">
+                <hr class="<?php echo htmlspecialchars($cssClass); ?> cfi-control"
+                    data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
                 <?php
                 break;
             default:
@@ -1162,7 +1170,7 @@ public function printFormTagOpening()
 
 
         ?>
-        <div class="field form-group">
+        <div class="field form-group cfi-control" data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
             <?php $this->printFieldLabel($field); ?>
 
 
