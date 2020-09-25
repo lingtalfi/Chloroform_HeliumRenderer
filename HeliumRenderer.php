@@ -202,7 +202,7 @@ class HeliumRenderer implements ChloroformRendererInterface
 
         // storing cache vars
         $this->_chloroform = $chloroform;
-        if (array_key_exists("cssId", $chloroform)) {
+        if (array_key_exists("cssId", $chloroform) && null !== $chloroform['cssId']) {
             $this->_formCssId = $chloroform['cssId'];
         }
     }

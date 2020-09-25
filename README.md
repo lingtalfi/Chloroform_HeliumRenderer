@@ -1,6 +1,6 @@
 Chloroform_HeliumRenderer
 ===========
-2019-07-26 -> 2020-09-22
+2019-07-26 -> 2020-09-25
 
 
 
@@ -403,6 +403,10 @@ Related
 History Log
 =============
 
+- 1.19.5 -- 2020-09-25
+
+    - fix Chloroform_HeliumRenderer->prepare setting cssId even if it's null
+    
 - 1.19.4 -- 2020-09-22
 
     - now Chloroform_HeliumRenderer is compliant with the clever form initiative
