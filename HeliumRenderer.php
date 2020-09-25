@@ -1167,7 +1167,7 @@ public function printFormTagOpening()
 
         $button = $field['button'] ?? null;
         $buttonPosition = $field['button_position'] ?? 'pre';
-
+        $htmlAttributes = $field["htmlAttributes"] ?? [];
 
         ?>
         <div class="field form-group cfi-control" data-cfi-id="<?php echo htmlspecialchars($field['id']); ?>">
@@ -1200,6 +1200,9 @@ public function printFormTagOpening()
                     <?php if (true === $hasHint): ?>
                         aria-describedby="<?php echo $hintId; ?>"
                     <?php endif; ?>
+                    <?php foreach ($htmlAttributes as $k => $v): ?>
+                        <?php echo $k . '="' . htmlspecialchars($v) . '"'; ?>
+                    <?php endforeach; ?>
                 />
                 <?php if (null !== $icon || null !== $button): ?>
                 <?php if (null !== $icon && 'post' === $iconPosition): ?>

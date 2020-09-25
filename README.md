@@ -403,6 +403,10 @@ Related
 History Log
 =============
 
+- 1.19.6 -- 2020-09-25
+
+    - update Chloroform_HeliumRenderer->printInputField, now accepts htmlAttributes property
+    
 - 1.19.5 -- 2020-09-25
 
     - fix Chloroform_HeliumRenderer->prepare setting cssId even if it's null
