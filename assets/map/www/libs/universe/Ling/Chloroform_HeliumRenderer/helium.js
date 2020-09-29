@@ -216,7 +216,11 @@ if (false === ("HeliumFormHandler" in window)) {
 
                     if (false !== jField) {
 
+
+
                         var value = this.getValueByField(jField);
+
+
                         var fieldErrors = [];
 
                         for (var i in validators) {
@@ -380,6 +384,7 @@ if (false === ("HeliumFormHandler" in window)) {
                                         ('string' === typeof value && '' === value) ||
                                         ('object' === typeof value && $.isEmptyObject(value))
                                     ) {
+
                                         errorMessage = this.getErrorMessage("main", validator, {
                                             "fieldName": errorName,
                                         });
@@ -600,7 +605,7 @@ if (false === ("HeliumFormHandler" in window)) {
 
 
                 } else {
-                    this.error("I don't know how to add inline error message in this element yet (element " + id + ").");
+                    // this.error("I don't know how to add inline error message in this element yet (element " + id + ").");
                 }
             }
 
@@ -868,7 +873,7 @@ if (false === ("HeliumFormHandler" in window)) {
         };
 
         HeliumFormHandler.prototype.error = function (errMsg) {
-            throw new Error("Hydrogen HeliumFormHandler: " + errMsg);
+            throw new Error("Helium HeliumFormHandler: " + errMsg);
         };
 
 

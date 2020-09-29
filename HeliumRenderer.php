@@ -275,7 +275,6 @@ class HeliumRenderer implements ChloroformRendererInterface
             echo '<div style="display: none;" id="iframe-signal" data-value="' . htmlspecialchars($value) . '"></div>';
         }
 
-
         $this->printNotifications($this->_chloroform['notifications']);
         $this->printErrorSummary($this->_chloroform['errors']);
         $this->printFields($this->_chloroform['fields']);
@@ -951,6 +950,7 @@ public function printFormTagOpening()
             $sClass = "helium-is-invalid";
         }
         $htmlAttr = $field['htmlAttr'] ?? [];
+        $fieldValue = $field['value'];
 
 
         ?>
@@ -975,6 +975,13 @@ public function printFormTagOpening()
                                 <?php if ($htmlAttr): ?>
                                     <?php echo StringTool::htmlAttributes($htmlAttr); ?>
                                 <?php endif; ?>
+
+                                <?php if (is_array($fieldValue)): ?>
+                                    <?php if (in_array($value, $fieldValue, true)): ?>
+                                        checked="checked"
+                                    <?php endif; ?>
+                                <?php endif; ?>
+
                             >
                             <?php echo $label; ?>
                         </label>

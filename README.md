@@ -403,6 +403,10 @@ Related
 History Log
 =============
 
+- 1.19.7 -- 2020-09-29
+
+    - update Chloroform_HeliumRenderer->printCheckboxField, now handles default if items is an array
+    
 - 1.19.6 -- 2020-09-25
 
     - update Chloroform_HeliumRenderer->printInputField, now accepts htmlAttributes property
