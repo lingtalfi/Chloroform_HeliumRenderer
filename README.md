@@ -1,6 +1,6 @@
 Chloroform_HeliumRenderer
 ===========
-2019-07-26 -> 2020-09-25
+2019-07-26 -> 2020-10-01
 
 
 
@@ -403,6 +403,10 @@ Related
 History Log
 =============
 
+- 1.19.8 -- 2020-10-01
+
+    - fix typo in HeliumRenderer's error message
+    
 - 1.19.7 -- 2020-09-29
 
     - update Chloroform_HeliumRenderer->printCheckboxField, now handles default if items is an array

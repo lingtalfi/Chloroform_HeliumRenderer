@@ -484,7 +484,7 @@ public function printFormTagOpening()
                 break;
             default:
                 if (true === $this->options['strict']) {
-                    throw new ChloroformHeliumRendererException("Don't know how to handle this class name: $className (for fieldId=$id)");
+                    throw new ChloroformHeliumRendererException("Don't know how to handle this class name: $className (for fieldId=" . $field['id'] . ")");
                 }
                 break;
         }
