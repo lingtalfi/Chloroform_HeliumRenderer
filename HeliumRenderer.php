@@ -983,6 +983,8 @@ public function printFormTagOpening()
                                 <?php if (in_array($value, $fieldValue, true)): ?>
                                     checked="checked"
                                 <?php endif; ?>
+                            <?php elseif ((string)$value === (string)$fieldValue): ?>
+                                checked="checked"
                             <?php endif; ?>
 
                         >
