@@ -403,6 +403,10 @@ Related
 History Log
 =============
 
+- 1.19.11 -- 2020-12-04
+
+    - Add lpi-deps.byml file
+
 - 1.19.10 -- 2020-12-01
 
     - fix HeliumRenderer, not handling checkbox default value with checkboxes of type bool
